@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Filmes</title>
+</head>
+<body>
+    <header>
+        <h1>Lista de Filmes</h1>
+    </header>
+
+    <main>
+        <h2>Filmes Cadastrados</h2>
+
+        <ul>
+            {% for filme in filmes %}
+                <li>
+                    <strong>{{ filme.titulo }}</strong> - Direção: {{ filme.diretor }}, Ano: {{ filme.ano }}
+
+                    <!-- BOTÃO APAGAR -->
+                    <form action="/apagar/{{ filme.id }}" method="POST" style="display:inline;">
+                        <button type="submit">Apagar</button>
+                    </form>
+
+                    <!-- BOTÃO EDITAR -->
+                    <a href="/editar/{{ filme.id }}">
+                        <button type="button">Editar</button>
+                    </a>
+                </li>
+            {% else %}
+                <li>Nenhum filme cadastrado.</li>
+            {% endfor %}
+        </ul>
+
+        <br>
+
+        <a href="/adicionar">
+            <button type="button">Adicionar Novo Filme</button>
+        </a>
+
+        <br><br>
+
+        <a href="/">
+            <button type="button">Voltar ao Início</button>
+        </a>
+    </main>
+</body>
+</html>

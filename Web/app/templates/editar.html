@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Filme</title>
+</head>
+<body>
+    <header>
+        <h1>Editar Filme</h1>
+    </header>
+
+    <main>
+        <form action="/editar-filme/{{ filme.id }}" method="POST">
+            <label for="titulo">Título:</label><br>
+            <input type="text" id="titulo" name="titulo" value="{{ filme.titulo }}" required><br><br>
+
+            <label for="ano">Ano:</label><br>
+            <input type="number" id="ano" name="ano" value="{{ filme.ano }}" required><br><br>
+
+            <label for="diretor">Diretor:</label><br>
+            <input type="text" id="diretor" name="diretor" value="{{ filme.diretor }}" required><br><br>
+
+            <button type="submit">Salvar Alterações</button>
+        </form>
+
+        <br>
+        
+        <a href="/filmes">Voltar à Lista</a>
+    </main>
+</body>
+</html>
