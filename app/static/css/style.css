@@ -1,0 +1,9 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 10px 20px;
+}
+nav a { margin-right: 8px; }
+.container { max-width: 900px; margin: 0 auto; }
+.flashes { color: red; list-style: none; padding: 0; }
+button { margin: 4px; padding: 6px 10px; }
+img { border-radius: 4px; }
