@@ -9,18 +9,17 @@ views = Blueprint('views', __name__)
 def index():
     return render_template('index.html')
 
-# LISTAR FILMES
 @views.route('/filmes')
 def listar_filmes():
     filmes = Filme.query.order_by(Filme.id.desc()).all()
     return render_template("filmes.html", filmes=filmes)
 
-# FORMULÁRIO ADICIONAR
+
 @views.route('/adicionar', methods=['GET'])
 def adicionar_form():
     return render_template('adicionar.html')
 
-# SALVAR NOVO FILME
+
 @views.route('/adicionar', methods=['POST'])
 def adicionar_filme():
     titulo = request.form.get('titulo', '').strip()
@@ -56,13 +55,12 @@ def adicionar_filme():
 
     return redirect(url_for('views.listar_filmes'))
 
-# FORMULÁRIO EDITAR
+
 @views.route('/editar/<int:id>', methods=['GET'])
 def editar_form(id):
     filme = Filme.query.get_or_404(id)
     return render_template('editar.html', filme=filme)
 
-# SALVAR EDIÇÃO
 @views.route('/editar/<int:id>', methods=['POST'])
 def editar_filme(id):
     filme = Filme.query.get_or_404(id)
@@ -94,7 +92,7 @@ def editar_filme(id):
     db.session.commit()
     return redirect(url_for('views.listar_filmes'))
 
-# APAGAR FILME
+
 @views.route('/apagar/<int:id>', methods=['GET', 'POST'])
 def apagar_filme(id):
     filme = Filme.query.get_or_404(id)
@@ -104,8 +102,9 @@ def apagar_filme(id):
         return redirect(url_for('views.listar_filmes'))
     return render_template('apagar.html', filme=filme)
 
-# PÁGINA DE CONFIRMAÇÃO
+
 @views.route('/apagar/confirmar/<int:id>')
 def apagar_confirmar(id):
     filme = Filme.query.get_or_404(id)
     return render_template('apagar_confirmar.html', filme=filme)
+
