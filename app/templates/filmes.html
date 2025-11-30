@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Lista de Filmes{% endblock %}
+
+{% block content %}
+<h1>Lista de Filmes</h1>
+
+{% if filmes %}
+<table class="tabela-filmes">
+    <tr>
+        <th>Foto</th>
+        <th>Título</th>
+        <th>Ano</th>
+    </tr>
+
+    {% for filme in filmes %}
+    <tr>
+        <td>
+            {% if filme.foto_base64 %}
+                <img src="{{ filme.foto_base64 }}" width="120">
+            {% else %}
+                Sem imagem
+            {% endif %}
+        </td>
+
+        <td>{{ filme.titulo }}</td>
+        <td>{{ filme.ano }}</td>
+
+        <td>
+            <a href="{{ url_for('views.editar_form', id=filme.id) }}">
+                <button type="button">Editar</button>
+            </a>
+
+            <a href="{{ url_for('views.apagar_confirmar', id=filme.id) }}">
+                <button type="button" class="danger">Apagar</button>
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% else %}
+<p>Nenhum filme cadastrado.</p>
+{% endif %}
+
+{% endblock %}
