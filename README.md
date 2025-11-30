@@ -154,10 +154,10 @@ O Flask utiliza **SQLite** (arquivo `.db`) por padrão.
 A classe `Filme` possui:
 
 ```python
-id
+
 titulo
 ano
-descricao
+
 foto_base64
 ```
 
@@ -183,3 +183,4 @@ foto_base64
 
 
 ---
+
