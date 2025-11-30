@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Apagar Filme</title>
-</head>
-<body>
-    <header>
-        <h1>Confirmar exclusão</h1>
-    </header>
-
-    <main>
-        {% extends "base.html" %}
+{% extends "base.html" %}
 {% block title %}Apagar Filme{% endblock %}
 {% block content %}
 <h1>Confirmar exclusão</h1>
@@ -25,6 +12,4 @@
 <a href="{{ url_for('views.listar_filmes') }}"><button type="button">Não — Voltar</button></a>
 {% endblock %}
 
-    </main>
-</body>
-</html>
+
