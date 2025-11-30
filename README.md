@@ -181,19 +181,3 @@ foto_base64
    ```
 
 ---
-
-##  Conclusão
-
-Este projeto demonstra:
-
-* uso de rotas
-* formulários Flask
-* upload de imagens
-* uso de SQLite
-* templates Jinja
-* ambiente virtual `.venv`
-* organização MVC
-
-
-
----
