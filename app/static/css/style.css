@@ -1,6 +1,4 @@
-/* ============================ */
-/*  ESTILO DO CABEÇALHO FIXO   */
-/* ============================ */
+
 header {
     position: fixed;
     top: 0;
@@ -18,7 +16,6 @@ header {
 
 
 
-/* Espaço para o conteúdo não ficar atrás do header */
 body {
     margin: 0;
     padding-top: 80px;
@@ -55,33 +52,25 @@ nav ul li a:hover {
 }
 
 
-/* ============================ */
-/*      ESTILO DO CONTEÚDO     */
-/* ============================ */
 h1 {
     text-align: center;
     margin-bottom: 25px;
 }
 
-/* ============================ */
-/*      CONTAINER RESPONSIVO    */
-/* ============================ */
+
 .table-container {
     width: 95%;
     margin: auto;
-    overflow-x: auto; /* barra horizontal se necessário */
+    overflow-x: auto; 
     padding-bottom: 20px;
 }
 
-/* ============================ */
-/*      ESTILO DA TABELA       */
-/* ============================ */
 
 .tabela-filmes {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 12px;
-    min-width: 700px; /* evita quebrar demais */
+    min-width: 700px; 
 }
 
 .tabela-filmes th {
@@ -102,16 +91,14 @@ h1 {
     box-shadow: 0 0 8px rgba(0,0,0,0.08);
 }
 
-/* Imagem */
+
 .tabela-filmes img {
     max-width: 120px;
     border-radius: 6px;
     box-shadow: 0 0 6px rgba(0,0,0,0.2);
 }
 
-/* ============================ */
-/*       BOTÕES DE AÇÃO        */
-/* ============================ */
+
 
 button {
     padding: 8px 14px;
@@ -128,7 +115,7 @@ button:hover {
     background: #1565c0;
 }
 
-/* Botão de apagar */
+
 button.danger {
     background: #d32f2f;
 }
@@ -141,9 +128,6 @@ a {
     text-decoration: none;
 }
 
-/* ============================ */
-/*     RESPONSIVIDADE MOBILE    */
-/* ============================ */
 
 @media (max-width: 600px) {
 
@@ -155,9 +139,8 @@ a {
         max-width: 80px;
     }
 
-    /* Estilo tipo “cards” quando a tela for pequena */
     .tabela-filmes {
-        min-width: 100%; /* libera a tabela */
+        min-width: 100%; 
         border-spacing: 0 15px;
     }
 
@@ -186,3 +169,4 @@ a {
         border-bottom: none;
     }
 }
+
